@@ -2,30 +2,10 @@
     font-family: Montserrat,serif;
 }
 
-#mainBlock{
-    background: white;
-    width: 450px;
-}
-
 img{
     width: 300px;
 }
 
-
-.base{
-
-    border-bottom: #55c3b6 solid 5px;
-    width: 400px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding-bottom: 15px;
-    padding-top: 15px;
-
-    margin: 35px;
-}
 
 div div button{
     width: 70px;
@@ -98,7 +78,6 @@ a{
 
     color: #8f2140;
 
-  margin-bottom: 30px;
 }
 
 #all{
@@ -106,6 +85,8 @@ a{
     height: 100px;
 
     font-size: 30px;
+
+    right: 0;
 }
 
 

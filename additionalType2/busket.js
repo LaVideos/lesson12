@@ -3,7 +3,6 @@ const arr_ = localStorage.getItem('Buy');
 const products = JSON.parse(arr_);
 
 const mainDiv = document.getElementById('mainDiv');
-
 for (let i = 0; i < products.length; i++) {
     const div = document.createElement('div');
     const btn = document.createElement('button');
@@ -15,7 +14,7 @@ for (let i = 0; i < products.length; i++) {
         div.classList.add(`div${i}`);
         div.style.margin = '10px';
         switch (item) {
-            case 'name':
+            case 'name_':
                 lDiv.innerHTML = `${products[i][item]}`
                 lDiv.classList.add('name_');
                 break;
@@ -56,8 +55,8 @@ for (let i = 0; i < products.length; i++) {
 
 
     button.addEventListener('click', function () {
-        console.log(removeP(products[i].name));
-        let r = removeP(products[i].name);
+        console.log(removeP(products[i].name_));
+        let r = removeP(products[i].name_);
         localStorage.setItem('Buy', JSON.stringify(r));
         div.remove();
         button.remove();
@@ -77,7 +76,7 @@ const removeP = someKey => {
     let products = localStorage.getItem('Buy');
     products = JSON.parse(products);
 
-    const index = products.findIndex(product => product.name === someKey);
+    const index = products.findIndex(product => product.name_ === someKey);
 
     if (index > -1) {
         products.splice(index, 1);
