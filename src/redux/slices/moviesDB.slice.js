@@ -6,14 +6,14 @@ const initialState = {
     errors:null,
     moviesWithGenre:[],
     topRatedFilm:[],
-    movie:null
+    movie:null,
 };
 
-const getSimilarMovies = createAsyncThunk(
+const getRecommendationMovies = createAsyncThunk(
     'movieDBSlice/getSimilarMovies',
     async ({id},{rejectWithValue})=>{
         try {
-            const {data} = await movieDBService.getSimilarMovies(id);
+            const {data} = await movieDBService.getRecomendation(id);
             return data.results
         }catch (e){
             return rejectWithValue(e.response.data)
@@ -46,6 +46,8 @@ const getAllMovies = createAsyncThunk(
     }
 );
 
+
+
 const getMoviesById = createAsyncThunk(
     'movieDBSlice/getMoviesById',
     async ({id,page},{rejectWithValue})=>{
@@ -77,6 +79,9 @@ const movieDBSlice = createSlice({
             .addCase(getTopRatedFilm.fulfilled,(state, action) => {
                 state.topRatedFilm = action.payload;
             })
+            .addCase(getRecommendationMovies.fulfilled,(state, action) => {
+                state.movies = action.payload
+            })
             .addDefaultCase((state, action) => {
                 const [type] = action.type.split('/').splice(-1);
                 if(type==='rejected'){
@@ -98,7 +103,7 @@ const movieActions = {
     getMoviesById,
     getTopRatedFilm,
     getMovieInfo,
-    getSimilarMovies
+    getRecommendationMovies,
 }
 
 export {

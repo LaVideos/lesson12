@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes,Navigate} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import {GenresPage, MovieInfoPage, MoviesListPage} from "./pages";
 import MainLayout from "./layouts/mainLayouts/MainLayout";
 
@@ -17,7 +17,6 @@ const App = () => {
                     <Route path={'/:movieId/movieData'} element={<MovieInfoPage/>}></Route>
                 </Route>
             </Routes>
-
         </div>
     );
 };
