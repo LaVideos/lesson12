@@ -4,16 +4,34 @@ body{
 
 
 .header{
-    background: #3f4142;
+    width: 100%;
+
     justify-items: center;
     display: flex;
     color: snow;
     padding: 20px;
     font-size: 20px;
-    border-bottom:2px solid #444242;
+
+    background: rgb(63,65,66);
+    background: linear-gradient(90deg, rgba(63,65,66,1) 0%, rgba(74,77,78,1) 50%, rgb(70, 73, 75) 100%);
 
     box-sizing: border-box;
+
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
 }
+
+.logo{
+    width: 65%;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    color: #8f4343;
+}
+
+
 
 .link{
     width: 20%;
@@ -23,12 +41,16 @@ body{
     margin: 10px;
     text-decoration: none;
     color: #ffffff;
+    transition: color 500ms;
+
+
 }
 
-.logo{
-    width: 65%;
-    justify-content: center;
-    justify-items: center;
-    display: flex;
-    color: #8f4343;
+.link a:hover{
+    color: orange;
+}
+
+.link a[class='active']{
+    border-bottom: 2px white solid;
+    transition: color 500ms;
 }

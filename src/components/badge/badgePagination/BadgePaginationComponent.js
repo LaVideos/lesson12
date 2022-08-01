@@ -8,10 +8,11 @@ const BadgePaginationComponent = ({currentPage,paginate,count}) => {
     };
 
     return (
-        <Stack spacing={2}>
-            <Pagination count={count} page={currentPage} onChange={handleChange} variant="outlined" />
-        </Stack>
+        <div><Stack spacing={2}>
+            <Pagination count={count} page={currentPage} onChange={handleChange} size="large"/>
+        </Stack></div>
     );
 };
 
 export default BadgePaginationComponent;
+

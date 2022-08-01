@@ -13,7 +13,7 @@ const getRecommendationMovies = createAsyncThunk(
     'movieDBSlice/getSimilarMovies',
     async ({id},{rejectWithValue})=>{
         try {
-            const {data} = await movieDBService.getRecomendation(id);
+            const {data} = await movieDBService.getRecommendation(id);
             return data.results
         }catch (e){
             return rejectWithValue(e.response.data)

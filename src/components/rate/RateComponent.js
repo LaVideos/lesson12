@@ -3,7 +3,7 @@ import {StarComponent} from "./StarComponent";
 
 
 function RateComponent({ numTotalStars = 10, initialRating  }) {
-    const [numSelectedStars, setNumSelectedStars] = useState(initialRating);
+    const [numSelectedStars, setNumSelectedStars] = useState(Math.floor(initialRating));
     const [numHoveringStars, setNumHoveringStars] = useState(null);
 
     const [isUserHovering, setIsUserHovering] = useState(false);
@@ -16,7 +16,7 @@ function RateComponent({ numTotalStars = 10, initialRating  }) {
     return (
         <div className="star-rating">
             <div onMouseEnter={() => setIsUserHovering(true)} onMouseLeave={() => setIsUserHovering(false)} >
-                {Array.from({ length: numTotalStars }).map((e, i) =>
+                {Array.from({ length:numTotalStars}).map((e, i) =>
                     <StarComponent
                         key={i}
                         color={getColor(isUserHovering, i, numSelectedStars, numHoveringStars)}

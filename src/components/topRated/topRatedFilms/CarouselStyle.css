@@ -8,3 +8,8 @@
     width: 0;
     background: transparent;
 }
+
+.topRated{
+    font-size: 40px;
+    margin-top: 200px;
+}

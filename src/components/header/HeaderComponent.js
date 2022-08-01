@@ -11,7 +11,8 @@ const HeaderComponent = () => {
 
                 <NavLink to={'genres'}>Genres</NavLink>
             </div>
-            <div className={css.logo}><div>NETFLIX-DNO</div></div>
+            <div className={css.logo}><div></div></div>
+
         </div>
     );
 };

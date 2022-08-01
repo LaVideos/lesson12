@@ -5,7 +5,7 @@ import GenresComponent from "./genreList/genres/GenresComponent";
 import GenreComponent from "./genreList/genre/GenreComponent";
 import MovieInfoComponent from "./movieInfo/MovieInfoComponent";
 import PaginationComponent from "./pagination/PaginationComponent";
-import CarouselTopComponent from "./carousel/carouselTopComponent/CarouselTopComponent";
+import CarouselComponent from "./carousel/carouselComponent/CarouselComponent";
 import TopRatedFilmsComponent from "./topRated/topRatedFilms/TopRatedFilmsComponent";
 import TopRatedFilmComponent from "./topRated/topRatedFilm/TopRatedFilmComponent";
 import {StarComponent} from "./rate/StarComponent";
@@ -14,6 +14,8 @@ import BadgeRateComponent from "./badge/badgeRate/BadgeRateComponent";
 import BadgePaginationComponent from "./badge/badgePagination/BadgePaginationComponent";
 import BadgeButtonNavComponent from "./badge/badgeButtonNav/BadgeButtonNavComponent";
 import RecommendationMoviesComponent from "./recommendationsMovies/RecommendationMoviesComponent";
+import BadgePaperComponent from "./badge/badgePaper/BadgePaperComponent";
+import BadgeLinkComponent from "./badge/badgeGenreLink/BadgeLinkComponent";
 
 export {
     HeaderComponent,
@@ -23,7 +25,7 @@ export {
     GenreComponent,
     MovieInfoComponent,
     PaginationComponent,
-    CarouselTopComponent,
+    CarouselComponent,
     TopRatedFilmsComponent,
     TopRatedFilmComponent,
     StarComponent,
@@ -31,5 +33,7 @@ export {
     BadgeRateComponent,
     BadgePaginationComponent,
     BadgeButtonNavComponent,
-    RecommendationMoviesComponent
+    RecommendationMoviesComponent,
+    BadgePaperComponent,
+    BadgeLinkComponent
 }

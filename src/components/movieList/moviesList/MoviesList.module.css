@@ -1,0 +1,17 @@
+.popularNow{
+    font-size: 26px;
+    margin: 20px;
+    color: orange;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.postersWrap{
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+}

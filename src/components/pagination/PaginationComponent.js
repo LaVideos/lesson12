@@ -2,6 +2,8 @@ import React from 'react';
 import {BadgeButtonNavComponent} from "../index";
 import BadgePaginationComponent from "../badge/badgePagination/BadgePaginationComponent";
 
+import css from './Pagination.module.css'
+
 const PaginationComponent = ({query,setQuery}) => {
 
     const nextPage = ()=>{
@@ -32,14 +34,14 @@ const PaginationComponent = ({query,setQuery}) => {
     const paginate = page => setQuery({page:`${page}`});
 
     return(
-        <div style={{display:"flex"}}>
+        <div className={css.paginationWrap}>
             <BadgeButtonNavComponent data={'Prev 10'} disabled={+query.get('page')===1} onclick={prevTenPage} />
-            <BadgeButtonNavComponent data={'Prev'} disabled={+query.get('page') === 1} onclick={prevPage}/>
+            {/*<BadgeButtonNavComponent data={'Prev'} disabled={+query.get('page') === 1} onclick={prevPage}/>*/}
 
             <BadgePaginationComponent currentPage={ +query.get('page')} paginate={paginate} count={100}/>
 
+            {/*<BadgeButtonNavComponent data={'Next'} disabled={+query.get('page') === 100} onclick={nextPage}/>*/}
             <BadgeButtonNavComponent data={'Next 10'} disabled={+query.get('page')===100} onclick={nextTenPage} />
-            <BadgeButtonNavComponent data={'Next'} disabled={+query.get('page') === 100} onclick={nextPage}/>
         </div>
     )
 

@@ -1,0 +1,18 @@
+.topRated{
+    font-size: 40px;
+    margin-top: 60px;
+    color: snow;
+    margin-bottom: 20px;
+}
+
+.wrap_topRated{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.carouselWrap{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}

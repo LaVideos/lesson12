@@ -6,11 +6,13 @@ import {TopRatedFilmComponent} from "../../index";
 
 
 
-const CarouselTopComponent = ({movies}) => {
+const CarouselComponent = ({movies}) => {
 
-    const PAGE_WIDTH = 1450;
+    const PAGE_WIDTH = 945;
 
     const [offset, setOffset] = useState(0);
+
+    const PAGE_HEIGHT = 520;
 
 
     const handleLeftArrowClick = ()=>{
@@ -32,18 +34,22 @@ const CarouselTopComponent = ({movies}) => {
     }
 
     return (
-        <div className={'main-container'}>
-            <FaChevronLeft className="arrow" onClick={handleLeftArrowClick} />
-            <div className={'window'}>
-                <div className={'all-pages-container'} style={{transform:`translateX(${offset}px)`}}>
-                    {
-                        movies.map(movie=><TopRatedFilmComponent movie={movie} key={movie.id} />)
-                    }
+        <div>
+            <div className={'main-container'}>
+                <FaChevronLeft className="arrow" onClick={handleLeftArrowClick}/>
+                <div className={'window'}>
+                    <div className={'all-pages-container'} style={{transform: `translateX(${offset}px)`}}>
+                        {
+                            movies.map(movie => <TopRatedFilmComponent movie={movie} key={movie.id}/>)
+                        }
+                    </div>
+                </div>
+                <div>
+                    <FaChevronRight className="arrow" onClick={handleRightArrowClick}/>
                 </div>
             </div>
-            <FaChevronRight className="arrow" onClick={handleRightArrowClick} />
         </div>
     );
 };
 
-export default CarouselTopComponent;
+export default CarouselComponent;

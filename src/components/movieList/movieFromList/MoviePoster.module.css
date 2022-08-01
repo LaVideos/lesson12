@@ -1,0 +1,46 @@
+.poster{
+    width: 300px;
+    height: 450px;
+    margin: 10px;
+
+    border-radius: 15px 15px 5px 5px;
+
+    -webkit-box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
+}
+
+.posterWrap{
+    margin-bottom: 10px ;
+
+    height: 505px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: 100ms;
+}
+
+.stars{
+    position: relative;
+
+    background: #848a8d;
+    width: 60%;
+    height: 30px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.posterWrap:hover{
+    background: #848a8d;
+    border-radius: 25px;
+}
+
+.stars:hover{
+    background: orange;
+}

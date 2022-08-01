@@ -24,7 +24,7 @@ export const movieDBService = {
             params,
         }
     }),
-    getRecomendation: (id) => axiosService.get(urls.getSimilar + `${id}/recommendations`, {
+    getRecommendation: (id) => axiosService.get(urls.getSimilar + `${id}/similar`, {
         params: {
            params
         }

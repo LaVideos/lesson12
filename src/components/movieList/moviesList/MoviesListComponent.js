@@ -1,8 +1,14 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+
 import {movieActions} from "../../../redux/slices";
 import {MovieFromListComponent, PaginationComponent} from "../../index";
 import {useSearchParams} from "react-router-dom";
+
+import css from './MoviesList.module.css'
+
+import {LocalFireDepartmentIcon} from "../../badge/badgeIcons";
+import BadgePaperComponent from "../../badge/badgePaper/BadgePaperComponent";
 
 const MoviesListComponent = ({id}) => {
 
@@ -24,8 +30,9 @@ const MoviesListComponent = ({id}) => {
 
     return (
         <div>
-            <div>{!id && `Popular NOW`}</div>
-            <div style={{display: 'flex', flexWrap: 'wrap'}}>{
+            {!id&&
+            <div className={css.popularNow}><LocalFireDepartmentIcon/><BadgePaperComponent data={'Popular NOW'} color={'orange'} height={40} width={170} bg={'#4a4d4e'}/><LocalFireDepartmentIcon/></div>}
+            <div className={css.postersWrap}>{
                 movies.map(movie => <MovieFromListComponent key={movie.id} movie={movie}/>)
             }</div>
             <PaginationComponent query={query} setQuery={setQuery}/>

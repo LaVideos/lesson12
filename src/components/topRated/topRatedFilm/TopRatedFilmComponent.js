@@ -12,11 +12,15 @@ const TopRatedFilmComponent = ({movie}) => {
 
 
     return (
-        <div className={'img-wrap'}>
-            <img src={`${postersURL + backdrop_path}`} alt={`${title}`} style={{width: '1450px',height:'800px'}}/>
-            <div className={'movieData'}>
-                <NavLink to={'/'+id.toString()+'/movieData'} state={movie}><div>{title}</div><BadgeRateComponent item={vote_average}/></NavLink>
-                <RateComponent initialRating={vote_average}/>
+        <div>
+            <div className={'img-wrap'}>
+                <img src={`${postersURL + backdrop_path}`} alt={`${title}`} style={{width: '945px', height: '502px'}}/>
+                <div className={'movieData'}>
+                    <NavLink to={'/' + id.toString() + '/movieData'} className={'topMovieLink'} state={movie}>
+                        <div>{title}</div>
+                        <BadgeRateComponent item={vote_average}/></NavLink>
+                    <RateComponent initialRating={vote_average} className={'star'}/>
+                </div>
             </div>
         </div>
     );
