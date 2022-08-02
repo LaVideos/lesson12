@@ -13,6 +13,10 @@ const HeaderComponent = () => {
             </div>
             <div className={css.logo}><div></div></div>
 
+            <div>
+                <NavLink to={'search'}>Search Movie</NavLink>
+            </div>
+
         </div>
     );
 };

@@ -16,7 +16,7 @@ const TopRatedFilmComponent = ({movie}) => {
             <div className={'img-wrap'}>
                 <img src={`${postersURL + backdrop_path}`} alt={`${title}`} style={{width: '945px', height: '502px'}}/>
                 <div className={'movieData'}>
-                    <NavLink to={'/' + id.toString() + '/movieData'} className={'topMovieLink'} state={movie}>
+                    <NavLink to={'/movie/' + id.toString() + '/movieData'} className={'topMovieLink'} state={movie}>
                         <div>{title}</div>
                         <BadgeRateComponent item={vote_average}/></NavLink>
                     <RateComponent initialRating={vote_average} className={'star'}/>

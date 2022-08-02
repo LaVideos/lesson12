@@ -4,18 +4,18 @@ import BadgePaginationComponent from "../badge/badgePagination/BadgePaginationCo
 
 import css from './Pagination.module.css'
 
-const PaginationComponent = ({query,setQuery}) => {
+const PaginationComponent = ({query,setQuery,id}) => {
 
-    const nextPage = ()=>{
-        const next_ = +query.get('page')+1;
-        setQuery({page:`${next_}`});
-    };
-
-    const prevPage = () => {
-        if(+query.get('page') > 1){
-            const prev_ = +query.get('page')-1;
-            setQuery({page:`${prev_}`});}
-    }
+    // const nextPage = ()=>{
+    //     const next_ = +query.get('page')+1;
+    //     setQuery({page:`${next_}`});
+    // };
+    //
+    // const prevPage = () => {
+    //     if(+query.get('page') > 1){
+    //         const prev_ = +query.get('page')-1;
+    //         setQuery({page:`${prev_}`});}
+    // }
 
     const nextTenPage = ()=>{
         const next_ = +query.get('page')+10;
@@ -33,12 +33,18 @@ const PaginationComponent = ({query,setQuery}) => {
 
     const paginate = page => setQuery({page:`${page}`});
 
+    let count = 500;
+
+    if(id){
+        count = 300;
+    }
+
     return(
         <div className={css.paginationWrap}>
             <BadgeButtonNavComponent data={'Prev 10'} disabled={+query.get('page')===1} onclick={prevTenPage} />
             {/*<BadgeButtonNavComponent data={'Prev'} disabled={+query.get('page') === 1} onclick={prevPage}/>*/}
 
-            <BadgePaginationComponent currentPage={ +query.get('page')} paginate={paginate} count={100}/>
+            <BadgePaginationComponent currentPage={ +query.get('page')} paginate={paginate} count={count}/>
 
             {/*<BadgeButtonNavComponent data={'Next'} disabled={+query.get('page') === 100} onclick={nextPage}/>*/}
             <BadgeButtonNavComponent data={'Next 10'} disabled={+query.get('page')===100} onclick={nextTenPage} />

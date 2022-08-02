@@ -7,7 +7,20 @@ const initialState = {
     moviesWithGenre:[],
     topRatedFilm:[],
     movie:null,
+    moviesSearch:[]
 };
+
+const getSearchMovie = createAsyncThunk(
+    'movieDBSlice/getSearchMovie',
+    async ({title},{rejectWithValue})=>{
+    try {
+        const {data} = await movieDBService.searchMovie(title);
+        return data.results
+    }catch (e){
+        return rejectWithValue(e.response.data)
+    }
+}
+);
 
 const getRecommendationMovies = createAsyncThunk(
     'movieDBSlice/getSimilarMovies',
@@ -82,6 +95,9 @@ const movieDBSlice = createSlice({
             .addCase(getRecommendationMovies.fulfilled,(state, action) => {
                 state.movies = action.payload
             })
+            .addCase(getSearchMovie.fulfilled,(state, action) => {
+                state.moviesSearch = action.payload
+            })
             .addDefaultCase((state, action) => {
                 const [type] = action.type.split('/').splice(-1);
                 if(type==='rejected'){
@@ -104,6 +120,7 @@ const movieActions = {
     getTopRatedFilm,
     getMovieInfo,
     getRecommendationMovies,
+    getSearchMovie
 }
 
 export {

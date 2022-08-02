@@ -1,7 +1,12 @@
 .wrap{
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     color: white;
+
+    background: #575b5d;
+
+    justify-content: flex-start;
+
 
 }
 
@@ -9,10 +14,51 @@
     font-size: 40px;
 }
 
-.overview{
+.overview p {
+    font-size: 22px;
+}
 
-    width: 500px;
+.data{
+    margin-top: 80px;
+    width: 50%;
+
+}
+
+.data div {
+    margin:10px;
+    background: #404142;
+
+    transition: 100ms;
+    padding: 5px;
+}
+
+.data img {
+    border-radius: 10px;
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+.img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlePoster{
+    width: 40%;
+    margin: 20px 30px 20px 30px;
+}
+
+.titlePoster img {
+    border-radius: 10px;
+}
+
+.genre{
+}
 
 
 
+.data div:hover {
+    background: #848a8d;
 }

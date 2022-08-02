@@ -10,7 +10,9 @@ const RecommendationMoviesComponent = ({id}) => {
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(movieActions.getRecommendationMovies({id}));
+        if(id){
+            dispatch(movieActions.getRecommendationMovies({id}));
+        }
     },[id])
 
 

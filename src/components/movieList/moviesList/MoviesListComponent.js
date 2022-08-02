@@ -35,7 +35,7 @@ const MoviesListComponent = ({id}) => {
             <div className={css.postersWrap}>{
                 movies.map(movie => <MovieFromListComponent key={movie.id} movie={movie}/>)
             }</div>
-            <PaginationComponent query={query} setQuery={setQuery}/>
+            <PaginationComponent query={query} setQuery={setQuery} id={id}/>
         </div>
     );
 };

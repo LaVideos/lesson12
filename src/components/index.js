@@ -16,6 +16,9 @@ import BadgeButtonNavComponent from "./badge/badgeButtonNav/BadgeButtonNavCompon
 import RecommendationMoviesComponent from "./recommendationsMovies/RecommendationMoviesComponent";
 import BadgePaperComponent from "./badge/badgePaper/BadgePaperComponent";
 import BadgeLinkComponent from "./badge/badgeGenreLink/BadgeLinkComponent";
+import SearchComponent from "./search/SearchComponent";
+import BadgeInputTitleComponent from "./badge/badgeInputTitle/BadgeInputTitleComponent";
+import BadgeErrorComponent from "./badge/badgeError/BadgeErrorComponent";
 
 export {
     HeaderComponent,
@@ -35,5 +38,8 @@ export {
     BadgeButtonNavComponent,
     RecommendationMoviesComponent,
     BadgePaperComponent,
-    BadgeLinkComponent
+    BadgeLinkComponent,
+    SearchComponent,
+    BadgeInputTitleComponent,
+    BadgeErrorComponent
 }
