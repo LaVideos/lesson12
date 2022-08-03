@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StarComponent} from "./StarComponent";
 
 
-function RateComponent({ numTotalStars = 10, initialRating  }) {
+function RateComponent({ numTotalStars = 10, initialRating,color }) {
     const [numSelectedStars, setNumSelectedStars] = useState(Math.floor(initialRating));
     const [numHoveringStars, setNumHoveringStars] = useState(null);
 
@@ -10,7 +10,7 @@ function RateComponent({ numTotalStars = 10, initialRating  }) {
 
     function getColor(isUserHovering, i, numSelectedStars, numHoveringStars) {
         const threshold = isUserHovering ? numHoveringStars : numSelectedStars;
-        return (i < threshold) ? "lightYellow" : "grey";
+        return (i < threshold) ? color : "grey";
     }
 
     return (

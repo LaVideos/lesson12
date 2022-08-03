@@ -26,12 +26,18 @@ const MoviesListComponent = ({id}) => {
         }
     }, [query,id, dispatch]);
 
+    const theme = localStorage.getItem('theme');
 
+    let bg = '#4a4d4e';
+
+    if(theme === 'dark'){
+        bg = 'white'
+    }
 
     return (
         <div>
             {!id&&
-            <div className={css.popularNow}><LocalFireDepartmentIcon/><BadgePaperComponent data={'Popular NOW'} color={'orange'} height={40} width={170} bg={'#4a4d4e'}/><LocalFireDepartmentIcon/></div>}
+            <div className={css.popularNow}><LocalFireDepartmentIcon/><BadgePaperComponent data={'Popular NOW'} color={'orange'} height={40} width={170} bg={bg}/><LocalFireDepartmentIcon/></div>}
             <div className={css.postersWrap}>{
                 movies.map(movie => <MovieFromListComponent key={movie.id} movie={movie}/>)
             }</div>

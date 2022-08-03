@@ -16,10 +16,20 @@ const TopRatedFilmsComponent = () => {
             dispatch(movieActions.getTopRatedFilm());
     }, []);
 
+    const theme = localStorage.getItem('theme');
+
+    let bg = '#4a4d4e'
+    let color = 'white';
+
+    if(theme==='dark'){
+        bg='white';
+        color = 'black'
+    }
+
     return (
         <div>
             <div className={css.wrap_topRated}>
-                <div className={css.topRated}><BadgePaperComponent data={'20 BEST OF THE BEST'} bg={'#4a4d4e'} color={'white'} width={500} height={56}/></div>
+                <div className={theme === 'black'? css.topRatedLight : css.topRatedDark}><BadgePaperComponent data={'20 BEST OF THE BEST'} bg={bg} color={color} width={500} height={56}/></div>
             </div>
                 <div className={css.carouselWrap}>
                     <CarouselComponent movies={topRatedFilm}/>

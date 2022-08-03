@@ -1,9 +1,4 @@
-.topRated{
-    font-size: 40px;
-    margin-top: 60px;
-    color: snow;
-    margin-bottom: 20px;
-}
+
 
 .wrap_topRated{
     display: flex;
@@ -15,4 +10,18 @@
     display: flex;
     justify-content: center;
     justify-items: center;
+}
+
+.topRatedLight, .topRatedDark{
+    font-size: 40px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.topRatedLight{
+    color: black;
+}
+
+.topRatedDark{
+    color: snow;
 }

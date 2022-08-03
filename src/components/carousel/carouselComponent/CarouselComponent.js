@@ -12,7 +12,6 @@ const CarouselComponent = ({movies}) => {
 
     const [offset, setOffset] = useState(0);
 
-    const PAGE_HEIGHT = 520;
 
 
     const handleLeftArrowClick = ()=>{
@@ -33,10 +32,19 @@ const CarouselComponent = ({movies}) => {
 
     }
 
+    const theme = localStorage.getItem('theme');
+
+    let color = 'white';
+
+    if(theme==='dark'){
+        color = 'black'
+    }
+
+
     return (
         <div>
             <div className={'main-container'}>
-                <FaChevronLeft className="arrow" onClick={handleLeftArrowClick}/>
+                <FaChevronLeft className="arrow" onClick={handleLeftArrowClick} color={color}/>
                 <div className={'window'}>
                     <div className={'all-pages-container'} style={{transform: `translateX(${offset}px)`}}>
                         {
@@ -45,7 +53,7 @@ const CarouselComponent = ({movies}) => {
                     </div>
                 </div>
                 <div>
-                    <FaChevronRight className="arrow" onClick={handleRightArrowClick}/>
+                    <FaChevronRight className="arrow" onClick={handleRightArrowClick} color={color}/>
                 </div>
             </div>
         </div>

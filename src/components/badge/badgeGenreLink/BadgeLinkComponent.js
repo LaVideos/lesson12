@@ -6,6 +6,8 @@ import {NavLink} from "react-router-dom";
 import css from './BadgeLink.module.css'
 import {MovieIcon} from "../badgeIcons";
 
+
+
 const style = {
     width: '250px',
     maxWidth: 360,
@@ -13,7 +15,6 @@ const style = {
 };
 
 export default function BadgeLinkComponent({id, name}) {
-
     return (
         <Badge color='success' badgeContent={<MovieIcon/>}>
             <NavLink to={id.toString() + '/moviesByGenre'} className={css.genreLink}>

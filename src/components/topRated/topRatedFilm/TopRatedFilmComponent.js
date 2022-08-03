@@ -19,7 +19,7 @@ const TopRatedFilmComponent = ({movie}) => {
                     <NavLink to={'/movie/' + id.toString() + '/movieData'} className={'topMovieLink'} state={movie}>
                         <div>{title}</div>
                         <BadgeRateComponent item={vote_average}/></NavLink>
-                    <RateComponent initialRating={vote_average} className={'star'}/>
+                    <RateComponent initialRating={vote_average} className={'star'} color={'lightyellow'}/>
                 </div>
             </div>
         </div>

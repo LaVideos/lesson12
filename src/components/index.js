@@ -19,6 +19,7 @@ import BadgeLinkComponent from "./badge/badgeGenreLink/BadgeLinkComponent";
 import SearchComponent from "./search/SearchComponent";
 import BadgeInputTitleComponent from "./badge/badgeInputTitle/BadgeInputTitleComponent";
 import BadgeErrorComponent from "./badge/badgeError/BadgeErrorComponent";
+import BadgeToggleComponent from "./badge/badgeToggler/BadgeToggleComponent";
 
 export {
     HeaderComponent,
@@ -41,5 +42,6 @@ export {
     BadgeLinkComponent,
     SearchComponent,
     BadgeInputTitleComponent,
-    BadgeErrorComponent
+    BadgeErrorComponent,
+    BadgeToggleComponent
 }

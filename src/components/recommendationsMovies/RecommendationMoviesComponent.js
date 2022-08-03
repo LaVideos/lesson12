@@ -1,7 +1,10 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+
 import {movieActions} from "../../redux/slices";
 import {MovieFromListComponent} from "../index";
+
+import css from '../movieList/moviesList/MoviesList.module.css'
 
 const RecommendationMoviesComponent = ({id}) => {
 
@@ -17,7 +20,7 @@ const RecommendationMoviesComponent = ({id}) => {
 
 
     return (
-        <div style={{display:'flex',flexWrap:'wrap'}}>
+        <div className={css.postersWrap}>
             {
                 movies.map(movie=><MovieFromListComponent movie={movie} key={movie.id}/>)
             }

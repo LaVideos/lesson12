@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="24809dfe-3073-46f1-9ab0-7a46e76bf304" name="Changes" comment="ProjectTRY">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +102,9 @@
       <workItem from="1659315749150" duration="70000" />
       <workItem from="1659348116407" duration="5000" />
       <workItem from="1659368962802" duration="860000" />
+      <workItem from="1659401693626" duration="117000" />
+      <workItem from="1659432637923" duration="40000" />
+      <workItem from="1659437154133" duration="627000" />
     </task>
     <task id="LOCAL-00001" summary="ProjectTRY">
       <created>1659141633476</created>
@@ -125,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659315809974</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ProjectTRY">
+      <created>1659401792078</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659401792078</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,16 +1,24 @@
-.poster{
+.posterLight,.posterDark{
     width: 300px;
     height: 450px;
     margin: 10px;
 
     border-radius: 15px 15px 5px 5px;
+}
 
+.posterDark{
     -webkit-box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
     -moz-box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
     box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
 }
 
-.posterWrap{
+.posterLight{
+    -webkit-box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 5px 5px 1px rgba(0, 0, 0, 0.6);
+}
+
+.posterWrapLight,.posterWrapDark{
     margin-bottom: 10px ;
 
     height: 505px;
@@ -22,7 +30,6 @@
     transition: 100ms;
 
     position: relative;
-
 }
 
 .stars{
@@ -36,11 +43,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
-.posterWrap:hover{
+.posterWrapLight .stars{
+  background: #cccccc; ;
+}
+
+.posterWrapDark:hover{
     background: #848a8d;
+    border-radius: 25px;
+}
+
+.posterWrapLight:hover{
+    background: #cccccc;
     border-radius: 25px;
 }
 
