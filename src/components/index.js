@@ -20,6 +20,10 @@ import SearchComponent from "./search/SearchComponent";
 import BadgeInputTitleComponent from "./badge/badgeInputTitle/BadgeInputTitleComponent";
 import BadgeErrorComponent from "./badge/badgeError/BadgeErrorComponent";
 import BadgeToggleComponent from "./badge/badgeToggler/BadgeToggleComponent";
+import ReviewsComponent from "./review/reviewsComponent/ReviewsComponent";
+import ReviewComponent from "./review/reviewComponent/ReviewComponent";
+import UpcomingMoviesComponent from "./upcoming/upcomingMovies/UpcomingMoviesComponent";
+import UpcomingMovieComponent from "./upcoming/upcomingMovie/UpcomingMovieComponent";
 
 export {
     HeaderComponent,
@@ -43,5 +47,9 @@ export {
     SearchComponent,
     BadgeInputTitleComponent,
     BadgeErrorComponent,
-    BadgeToggleComponent
+    BadgeToggleComponent,
+    ReviewsComponent,
+    ReviewComponent,
+    UpcomingMovieComponent,
+    UpcomingMoviesComponent
 }

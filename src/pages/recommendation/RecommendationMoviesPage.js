@@ -1,10 +1,14 @@
 import React from 'react';
+
 import {RecommendationMoviesComponent} from "../../components";
+import {useParams} from "react-router-dom";
 
 const RecommendationMoviesPage = () => {
+    const {movieId} = useParams();
+
     return (
         <div>
-            <RecommendationMoviesComponent/>
+            <RecommendationMoviesComponent movieId={movieId}/>
         </div>
     );
 };

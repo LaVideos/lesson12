@@ -1,11 +1,5 @@
 import {axiosService} from "../index";
-import {apiKey, language, urls} from "../../constants";
-
-const params = {
-    api_key: `${apiKey}`,
-    language: `${language}`,
-}
-
+import {params, urls} from "../../constants";
 
 export const movieDBService = {
     getAllMovies: (page = 1) => axiosService.get(urls.getMovies, {
@@ -25,21 +19,23 @@ export const movieDBService = {
             params,
         }
     }),
-    getRecommendation: (id) => axiosService.get(urls.getSimilar + `${id}/similar`, {
+    getRecommendation: (id, page = 1) => axiosService.get(urls.getSimilar + `${id}/similar`, {
         params: {
-           params
+            params,
+            page: page
         }
     }),
-    searchMovie:(title)=>axiosService.get(urls.search+title,{params:{
-        params
-        }})
+    searchMovie: (title) => axiosService.get(urls.search + title, {
+        params: {
+            params
+        }
+    }),
+    getUpcoming:(page)=> axiosService.get(urls.getUpcoming,{params:{
+        params,
+            page
+        }}),
 }
-// https://api.themoviedb.org/3/movie/616037/reviews?api_key=dba25fc48bd56d66c46e87045ee30ec7&language=en-US&page=1 || rewiew
 
 
 // https://api.themoviedb.org/3/movie/upcoming?api_key=dba25fc48bd56d66c46e87045ee30ec7&language=en-US&page=1 || виходять
 
-
-
-// https://api.themoviedb.org/3/movie/616037/similar?api_key=dba25fc48bd56d66c46e87045ee30ec7&language=en-US&page=1
-// https://api.themoviedb.org/3/movie/278/recommendations?api_key=dba25fc48bd56d66c46e87045ee30ec7&language=en-US&page=1

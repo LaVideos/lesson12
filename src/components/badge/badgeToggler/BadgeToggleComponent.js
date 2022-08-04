@@ -1,32 +1,30 @@
-// import * as React from 'react';
-// import Switch from '@mui/material/Switch';
-//
-//
-// const label = { inputProps: { 'aria-label': 'Switch demo' } };
-//
-// export default function BadgeToggleComponent({switchTheme}) {
-//     return (
-//         <div>
-//             <Switch {...label} defaultChecked color="warning" onChange={switchTheme}/>
-//         </div>
-//     );
-// }
-
 import * as React from 'react';
 import Switch from '@mui/material/Switch';
 
-export default function BadgeToggleComponent({switchTheme,checked}) {
-    // const [checked, setChecked] = React.useState(true);
-    //
-    // const handleChange = (event) => {
-    //     setChecked(event.target.checked);
-    // };
+import {Brightness7Icon, NightlightIcon} from "../badgeIcons";
+
+import css from './BadgeToggle.module.css'
+
+export default function BadgeToggleComponent({switchTheme}) {
+    const theme = localStorage.getItem('theme');
+
+    let checked = false;
+
+    if(theme === 'dark'){
+        checked = true;
+    }
+
 
     return (
-        <Switch
+        <div className={css.toggle}>
+            <NightlightIcon/>
+            <Switch
             checked={checked}
             onChange={switchTheme}
-            inputProps={{ 'aria-label': 'controlled' }}
+            inputProps={{'aria-label': 'controlled'}}
+            color="warning"
         />
+        <Brightness7Icon/>
+        </div>
     );
 }

@@ -84,3 +84,31 @@
     width: 50px;
     font-size: 50px;
 }
+
+a{
+    text-decoration: none;
+}
+
+.plane{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviews{
+    font-size: 34px;
+    margin: 20px;
+    color: orange;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+.reviews svg{
+    width: 50px;
+    font-size: 50px;
+}
+
+.down{
+    transform: rotateZ(90deg);
+}

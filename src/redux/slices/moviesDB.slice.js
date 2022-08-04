@@ -4,11 +4,24 @@ import {movieDBService} from "../../services";
 const initialState = {
     movies:[],
     errors:null,
-    moviesWithGenre:[],
     topRatedFilm:[],
     movie:null,
-    moviesSearch:[]
+    moviesSearch:[],
+    pages:null,
+    upcoming:[]
 };
+
+const getUpcoming = createAsyncThunk(
+    'movieDBSlice/getUpcoming',
+    async ({page},{rejectWithValue})=>{
+        try {
+            const {data} = await movieDBService.getUpcoming(page);
+            return data.results
+        }catch (e){
+            return rejectWithValue(e.response.data)
+        }
+    }
+);
 
 const getSearchMovie = createAsyncThunk(
     'movieDBSlice/getSearchMovie',
@@ -24,9 +37,9 @@ const getSearchMovie = createAsyncThunk(
 
 const getRecommendationMovies = createAsyncThunk(
     'movieDBSlice/getSimilarMovies',
-    async ({id},{rejectWithValue})=>{
+    async ({id,page},{rejectWithValue})=>{
         try {
-            const {data} = await movieDBService.getRecommendation(id);
+            const {data} = await movieDBService.getRecommendation(id,page);
             return data.results
         }catch (e){
             return rejectWithValue(e.response.data)
@@ -98,6 +111,9 @@ const movieDBSlice = createSlice({
             .addCase(getSearchMovie.fulfilled,(state, action) => {
                 state.moviesSearch = action.payload
             })
+            .addCase(getUpcoming.fulfilled,(state, action) => {
+                state.upcoming = action.payload
+            })
             .addDefaultCase((state, action) => {
                 const [type] = action.type.split('/').splice(-1);
                 if(type==='rejected'){
@@ -120,7 +136,8 @@ const movieActions = {
     getTopRatedFilm,
     getMovieInfo,
     getRecommendationMovies,
-    getSearchMovie
+    getSearchMovie,
+    getUpcoming
 }
 
 export {

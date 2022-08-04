@@ -15,11 +15,8 @@ const HeaderComponent = () => {
             <div className={css.link}>
                 <NavLink to={'movies'}>Movies</NavLink>
                 <NavLink to={'genres'}>Genres</NavLink>
-            </div>
-            <div className={css.logo}><div></div></div>
-
-            <div className={css.link}>
                 <NavLink to={'search'}>Search Movie</NavLink>
+                <NavLink to={'upcoming'}>Upcoming</NavLink>
             </div>
 
             <BadgeToggleComponent checked={checked} switchTheme={switchTheme}  />

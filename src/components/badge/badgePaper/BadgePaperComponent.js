@@ -2,7 +2,17 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 
-export default function BadgePaperComponent({data,height,width,bg,color}) {
+export default function BadgePaperComponent({data,height,width,color}) {
+
+    const theme = localStorage.getItem('theme');
+
+    let bg = '#4a4d4e';
+
+    if(theme === 'dark'){
+        bg = 'white';
+    }
+
+
     return (
         <Box
             sx={{

@@ -14,12 +14,6 @@ const MovieFromListComponent = ({movie}) => {
 
     const theme = localStorage.getItem('theme');
 
-    let color = 'lightYellow';
-
-    if(theme==='dark'){
-        color = '#fffb00';
-    }
-
 
     return (
         <div className={theme === 'dark'? css.posterWrapLight : css.posterWrapDark}>
@@ -28,7 +22,7 @@ const MovieFromListComponent = ({movie}) => {
                      state={movie}
             > {poster_path?<img src={`${postersURL + poster_path}`} alt={`${original_title}`} className={theme === 'dark'? css.posterLight : css.posterDark}/>:
                 <img src="https://phti.by/wp-content/themes/bb/acf-blocks/blocks/block-9/img/not-found.png" alt="" className={theme === 'dark'? css.posterLight:css.posterDark}/>}</NavLink>
-            <div className={css.stars}><RateComponent initialRating={vote_average} numTotalStars={10} color={color} /></div>
+            <div className={css.stars}><RateComponent initialRating={vote_average} numTotalStars={10}/></div>
         </div>
     );
 };

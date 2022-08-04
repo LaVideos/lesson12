@@ -38,7 +38,7 @@ const MoviesListComponent = ({id}) => {
         <div>
             {!id&&
             <div className={css.popularNow}><LocalFireDepartmentIcon/><BadgePaperComponent data={'Popular NOW'} color={'orange'} height={40} width={170} bg={bg}/><LocalFireDepartmentIcon/></div>}
-            <div className={css.postersWrap}>{
+            <div className={theme === 'dark'? css.postersWrapLight : css.postersWrapDark}>{
                 movies.map(movie => <MovieFromListComponent key={movie.id} movie={movie}/>)
             }</div>
             <PaginationComponent query={query} setQuery={setQuery} id={id}/>

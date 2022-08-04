@@ -1,7 +1,7 @@
 import {token} from "./token";
 import {baseURL,urls,postersURL} from "./urls";
 import {apiKey} from "./apiKey";
-import {language,with_genres} from "./another.constants";
+import {language,with_genres,params} from "./another.constants";
 
 export {
     token,
@@ -10,5 +10,6 @@ export {
     postersURL,
     apiKey,
     language,
-    with_genres
+    with_genres,
+    params
 }

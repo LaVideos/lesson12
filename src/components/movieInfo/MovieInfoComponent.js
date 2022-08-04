@@ -2,21 +2,23 @@ import React from 'react';
 import {useSelector} from "react-redux";
 
 import {postersURL} from "../../constants";
-import {BadgePaperComponent, RateComponent, RecommendationMoviesComponent} from "../index";
+import {BadgePaperComponent, RateComponent, ReviewsComponent} from "../index";
 
 import css from './MovieInfo.module.css'
-import {RecommendIcon} from "../badge/badgeIcons";
+
+import {ForwardIcon, RecommendIcon, RemoveRedEyeIcon} from "../badge/badgeIcons";
+import {NavLink} from "react-router-dom";
 
 const MovieInfoComponent = () => {
     const {movie} = useSelector(state => state.movies)
 
+    console.log(movie)
+
     const theme = localStorage.getItem('theme');
 
-    let bg = '#4a4d4e';
     let color = 'lightYellow';
 
     if(theme === 'dark'){
-        bg = 'white';
         color = '#fffb00';
     }
 
@@ -27,7 +29,7 @@ const MovieInfoComponent = () => {
                 <div className={css.titlePoster}>
                     <div className={css.title}>{movie.title}</div>
                     {movie.vote_average && <RateComponent initialRating={movie.vote_average} numTotalStars={10} color={color}/>}
-                    <img src={`${postersURL + movie.poster_path}`} style={{width: '400px'}} alt=""/>
+                    {movie.poster_path&&<img src={`${postersURL + movie.poster_path}`} style={{width: '400px'}} alt=""/>}
                 </div>
 
 
@@ -55,9 +57,22 @@ const MovieInfoComponent = () => {
             <hr/>
             <hr/>
             <hr/>
-            <div className={css.recommend}><BadgePaperComponent data={'Recommendation'} width={300} color={'orange'} bg={bg} height={50}/><RecommendIcon/></div>
+            <div className={css.plane}>
+                    <div className={css.reviews}>
+                        <ForwardIcon className={css.down}/>
+                        <BadgePaperComponent data={'Review'} width={150} color={'orange'} height={50}/>
+                        <RemoveRedEyeIcon/>
+                    </div>
+                <NavLink to={movie.id.toString()+'/recommendation'}>
+                    <div className={css.recommend}>
+                        <RecommendIcon/>
+                        <BadgePaperComponent data={'Go to Recommendation'} width={400} color={'orange'} height={50}/>
+                        <ForwardIcon/>
+                    </div>
+                </NavLink>
+            </div>
             <div>
-                <RecommendationMoviesComponent id={movie.id}/>
+                <ReviewsComponent id={movie.id}/>
             </div>
         </div>}
     </div>);
